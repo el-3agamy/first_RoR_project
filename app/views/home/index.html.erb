@@ -1,0 +1,29 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "home", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="container">
+  <section class="home-hero">
+    <h1>Welcome to Trees</h1>
+    <p>Your premium platform for managing and exploring the digital ecosystem of trees.</p>
+    <div class="home-actions">
+      <%= link_to "Explore Trees", trees_path, class: "btn btn-primary" %>
+      <%= link_to "Add New Tree", new_tree_path, class: "btn", style: "background: rgba(255,255,255,0.1); color: white; border: 1px solid white;" %>
+    </div>
+  </section>
+
+  <div class="home-feature-grid">
+    <div class="card feature-card">
+      <h3>Easy Management</h3>
+      <p>Efficiently track and manage your collection with our streamlined interface.</p>
+    </div>
+    <div class="card feature-card">
+      <h3>Social Integration</h3>
+      <p>Connect your trees with Instagram, X, and Youtube seamlessly.</p>
+    </div>
+    <div class="card feature-card">
+      <h3>Premium Design</h3>
+      <p>Enjoy a clean, modern, and responsive experience on any device.</p>
+    </div>
+  </div>
+</div>

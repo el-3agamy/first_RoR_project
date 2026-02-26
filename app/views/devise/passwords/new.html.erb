@@ -1,0 +1,27 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "auth", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="card auth-card">
+  <div class="auth-header">
+    <h2>Forgot Password?</h2>
+    <p>We'll send you reset instructions</p>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "auth-form" }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "your@email.com" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Send instructions", class: "btn btn-primary btn-submit" %>
+    </div>
+  <% end %>
+
+  <div class="auth-links">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

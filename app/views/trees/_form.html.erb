@@ -1,0 +1,42 @@
+<%= form_with(model: tree, class: "card form-container") do |form| %>
+  <% if tree.errors.any? %>
+    <div class="alert">
+      <h2><%= pluralize(tree.errors.count, "error") %> prohibited this tree from being saved:</h2>
+      <ul>
+        <% tree.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: "Enter tree name" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :x %>
+    <%= form.text_field :x, placeholder: "@username" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram, placeholder: "@username" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :youtube %>
+    <%= form.text_field :youtube, placeholder: "Channel URL" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :style %>
+    <%= form.text_field :style, placeholder: "e.g. Modern, Minimalist" %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit "Save Tree", class: "btn btn-primary" %>
+    <%= link_to "Cancel", trees_path, class: "btn", style: "background: var(--bg-color);" %>
+  </div>
+<% end %>

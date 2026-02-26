@@ -1,0 +1,19 @@
+<nav class="premium-nav">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding-top: 0; padding-bottom: 0;">
+    <%= link_to "TreeApp", root_path, class: "nav-brand" %>
+
+    <div class="nav-links">
+      <%= link_to "Home", root_path %>
+      <%= link_to "Trees", trees_path %>
+      
+      <div class="nav-auth">
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn", style: "background: rgba(255,255,255,0.1); color: white; padding: 0.5rem 1rem;" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "btn", style: "background: rgba(255,255,255,0.1); color: white; padding: 0.5rem 1rem;" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary", style: "padding: 0.5rem 1rem;" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>

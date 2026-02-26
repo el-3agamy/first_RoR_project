@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "trees", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="container">
+  <div class="trees-header">
+    <h1>Trees Collection</h1>
+    <%= link_to "New tree", new_tree_path, class: "btn btn-primary" %>
+  </div>
+
+  <div id="trees" class="trees-grid">
+    <% @trees.each do |tree| %>
+      <%= render tree %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<% content_for :title, "Editing tree" %>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag "trees", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="container" style="max-width: 800px;">
+  <h1 style="margin-bottom: 2rem;">Editing Tree</h1>
+  <%= render "form", tree: @tree %>
+</div>

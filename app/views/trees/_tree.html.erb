@@ -1,0 +1,28 @@
+<div id="<%= dom_id tree %>" class="card tree-card">
+  <h2 style="margin-bottom: 1rem; color: var(--accent-color);"><%= tree.name %></h2>
+  
+  <div class="tree-info-row">
+    <span class="tree-label">X</span>
+    <span class="tree-value"><%= tree.x %></span>
+  </div>
+
+  <div class="tree-info-row">
+    <span class="tree-label">Instagram</span>
+    <span class="tree-value"><%= tree.instagram %></span>
+  </div>
+
+  <div class="tree-info-row">
+    <span class="tree-label">Youtube</span>
+    <span class="tree-value"><%= tree.youtube %></span>
+  </div>
+
+  <div class="tree-info-row">
+    <span class="tree-label">Style</span>
+    <span class="tree-value"><%= tree.style %></span>
+  </div>
+
+  <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem;">
+    <%= link_to "View Details", tree, class: "btn", style: "padding: 0.5rem 1rem; font-size: 0.9rem; background: var(--bg-color);" %>
+    <%= link_to "Edit", edit_tree_path(tree), class: "btn", style: "padding: 0.5rem 1rem; font-size: 0.9rem; background: var(--bg-color);" %>
+  </div>
+</div>

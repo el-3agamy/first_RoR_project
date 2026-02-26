@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "trees", "data-turbo-track": "reload" %>
+<% end %>
+
+<div class="container" style="max-width: 800px;">
+  <div class="trees-header">
+    <h1>Tree Details</h1>
+    <%= link_to "Back to trees", trees_path, class: "btn", style: "background: var(--white);" %>
+  </div>
+
+  <%= render @tree %>
+
+  <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+    <%= button_to "Destroy this tree", @tree, method: :delete, class: "btn btn-primary", style: "background: var(--danger-color);", data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
